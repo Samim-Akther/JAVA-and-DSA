@@ -6,11 +6,13 @@ public class question1 {
 
      height=[4,2,0,6,3,2,5]
       */
+    
       public static void main(String[] args) {
         int height[]={4,2,0,6,3,2,3};
         System.out.println(TrappedRainwater(height));
 
       }
+    
       public static int TrappedRainwater(int height[]){
         int n =height.length;
         //calculate left max boundary array
@@ -20,6 +22,7 @@ public class question1 {
             leftMax[i]=Math.max(height[i], leftMax[i-1]);
 
         }
+          
         //calculate Right max boundary array
         int rightMax[]=new int[n];
         rightMax[n-1]=height[n-1];
@@ -27,7 +30,9 @@ public class question1 {
             rightMax[i]=Math.max(height[i], leftMax[i+1]);
             
         }
+          
         int trappedwater =0;
+          
         for(int i=0;i<n;i++){
             //waterLevel
             int waterLevel=Math.min(leftMax[i],rightMax[i]);
